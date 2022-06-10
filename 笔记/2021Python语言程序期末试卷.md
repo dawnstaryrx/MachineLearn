@@ -158,6 +158,15 @@ for i in range(1, 10):
 
 > 12 编写程序，输出由1、2、3、4、5这五个数字组成的每位数都不相同的所有四位数。
 
+```python
+for i in range(1, 6):
+    for j in range(1, 6):
+        for k in range(1, 6):
+            for m in range(1, 6):
+                if i!=j and i!=k and i!=m and j!=k and j!=m and k!=m:
+                    print("%d"%(i*1000+j*100+k*10+m))
+```
+
 # 四．（每小题4分，共20分）
 
 > 13．编写程序，生成一个含有20个随机整数的列表，要求所有元素不相同，并且每个元素的值介于1到100之间。
