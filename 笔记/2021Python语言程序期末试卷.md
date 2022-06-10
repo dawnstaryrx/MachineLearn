@@ -221,3 +221,14 @@ print(n)
 容与demo6.py一致，但是在每行的行尾加上了行号。
 
 > 20 要求用户必须输入数字字符串。（要求利用异常处理结构）
+
+```python
+while True:
+    x = input("请输入一个数字字符串：")
+    try :
+        x = int(x)
+        print("你要输入的字符串是：%d" %x)
+        break
+    except Exception as e:
+        print("产生异常！")
+```
