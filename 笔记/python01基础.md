@@ -47,8 +47,17 @@ bool
 
 ### 2.6 输入
 
+输入一个字符串：  
+
 ```python
 a = input("请输入：")
+```
+
+一行输入三个整数：  
+
+```python
+x, y, z = map(int, input("输入三个整数：").split())
+print(x, y, z)
 ```
 
 ### 2.7 输出
