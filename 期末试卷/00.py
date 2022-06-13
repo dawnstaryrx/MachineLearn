@@ -3,5 +3,6 @@
 # @Author : 杨荣兴
 # @File : 00.py
 # @Software : PyCharm
-x, y, z = map(int, input("输入三个整数：").split())
-print(x, y, z)
+import os
+x = [filename for filename in os.listdir('.') if filename.endswith('.py')]
+print(x)

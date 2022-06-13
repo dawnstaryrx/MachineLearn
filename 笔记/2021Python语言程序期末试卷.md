@@ -82,6 +82,17 @@ print(lis2[-1])
 
 > 6 编写函数，首先生成包含1000个随机字符的字符串，然后统计每个字符的出现次数。  
 
+```python
+import random
+import string
+x = string.ascii_letters + string.digits + string.punctuation
+y = [random.choice(x) for i in range(1000)]
+z = ''.join(y)
+d = dict()
+for ch in z:
+    d[ch] = d.get(ch, 0) + 1  # 函数返回指定键的值
+print(d)
+```
 
 > 7 编写函数，要求利用多分支选择结构将成绩从百分制变换到等级制。（注意：等级分ABCDE五个等级）  
 
@@ -167,6 +178,19 @@ except:
 
 print("是第%d天" % date(y, m, d))
 
+```
+
+```text
+判断闰年的简单办法：
+import calendar
+calendar.isleap(2022) # False
+calendar.isleap(2020) # True
+计算两个日期之间相差多少天：
+def dayBetween(y1, m1, d1, y2, m2, d2):
+    from datetime import date
+    dif = date(y1, m1, d1)
+    dif = dif - date(y2, m2, d2)
+    return dif.days
 ```
 
 > 10 打印九九乘法表。要求：左对齐。
