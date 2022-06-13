@@ -42,10 +42,34 @@ num = 1234
 print(divide(num))
 ```
 
-> 3 编写函数，要求用户从键盘任意输入三个中文单词，按字典顺序输出。  
+> 3 编写函数，要求用户从键盘任意输入三个英文单词，按字典顺序输出。  
+
+```python
+def sor(x, y, z):
+    if x > y:
+        x, y = y, x
+    if x > z:
+        x, z = z, x
+    if y > z:
+        y, z = z, y
+    return x, y, z
+
+
+a, b, c = map(str, input("a b c = ").split())
+print(sor(a, b, c))
+```
 
 > 4 编写程序，把列表x = [a,b,a,b,a,b,a,b,a,b,a,b,a]中的所有a删掉。  
 
+```python
+x = ['a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a']
+l = len(x) - 1
+while l >= 0:
+    if x[l] == 'a':
+        x.pop(l)
+    l -= 1
+print(x)
+```
 
 # 二．（每小题 5分，共20分）
 　　　

@@ -3,10 +3,16 @@
 # @Author : 杨荣兴
 # @File : 03.py
 # @Software : PyCharm
-def word(w=None):
-    w[0] = input("1:")
-    w[1] = input("2:")
-    w[2] = input("3:")
-    maxlen = max(len(w[0], w[1], w[2]))
-    for i in range(0, maxlen+1):
-        
+# 编写函数，要求用户从键盘任意输入三个英文单词，按字典顺序输出。
+def sor(x, y, z):
+    if x > y:
+        x, y = y, x
+    if x > z:
+        x, z = z, x
+    if y > z:
+        y, z = z, y
+    return x, y, z
+
+
+a, b, c = map(str, input("a b c = ").split())
+print(sor(a, b, c))
