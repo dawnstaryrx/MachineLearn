@@ -127,6 +127,20 @@ print(score(sco))
 后询问是否继续输入下一个分数，回答“yes”就继续输入下一个分数，回答
 “no”就停止输入分数。
 
+```python
+def score():
+    sco = []
+    jus = 'yes'
+    num = 0
+    while jus == 'yes':
+        sco.append(int(input("输入成绩：")))
+        num += 1
+        jus = input("是否继续输入：(yes/no)")
+    print("平均成绩为：%.2f" % (sum(sco) / num))
+
+
+score()
+```
 
 # 三.（每小题4分，共20分）                
 
@@ -204,6 +218,30 @@ for i in range(1, 10):
 
 > 11 编写函数，要求输入一个数，判断一个这个数是否为素数。
 
+```python
+def issushu(n):
+    if n == 1:
+        return False
+    if n == 2:
+        return True
+    issu = True
+    for i in range(2, n):
+        if n%i == 0:
+            issu = False
+    if issu == True:
+        return True
+    else:
+        return False
+
+
+i = int(input("输入整数："))
+print("%d是不是素数？"%i)
+if issushu(i):
+    print("是")
+else:
+    print("不是")
+```
+
 > 12 编写程序，输出由1、2、3、4、5这五个数字组成的每位数都不相同的所有四位数。
 
 ```python
@@ -267,6 +305,19 @@ print(n)
 
 > 19 编写程序，保存为demo6.py，运行后生成文件demo6_new.py，其中的内
 容与demo6.py一致，但是在每行的行尾加上了行号。
+
+```python
+filename = 'demo6.py'
+with open(filename, 'r', encoding="utf-8") as fp:
+    lines = fp.readlines()
+maxLength = len(max(lines, key=len))
+
+lines = [line.rstrip().ljust(maxLength) + '#' + str(index) + '\n'
+         for index, line in enumerate(lines)]
+
+with open(filename[:-3]+'_new.py', 'w', encoding="utf-8") as fp:
+    fp.writelines(lines)
+```
 
 > 20 要求用户必须输入数字字符串。（要求利用异常处理结构）
 
