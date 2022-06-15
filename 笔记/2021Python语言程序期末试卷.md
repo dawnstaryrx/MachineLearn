@@ -288,6 +288,24 @@ print(n)
 > 14．凯撒加密，每个字母替换为后面第k个。（注意：小写字母循环小写字母，
 大写字母循环大写字母）。
 
+```python
+import string
+
+
+def kaisa(s, k):
+    lower = string.ascii_lowercase  # 小写字母
+    upper = string.ascii_uppercase  # 大写字母
+    before = string.ascii_letters
+    after = lower[k:] + lower[:k] + upper[k:] + upper[:k]
+    table = ''.maketrans(before, after)  # 创建映射表
+    return s.translate(table)
+
+
+s = input('请输入一个字符串：')
+k = int(input('请输入一个整数密钥：'))
+print(kaisa(s, k))
+```
+
 > 15 编写函数，接收任意多个实数，返回一个元组，其中最后一个元素为所有
 参数的平均值，其他元素为所有参数中大于平均值的实数。
 
@@ -301,7 +319,56 @@ print(n)
 > 17 编写函数，接收一个正偶数为参数，输出两个素数，并且这两个素数之和
 等于原来的正偶数。如果存在多组符合条件的素数，则全部输出。
 
+```python
+def issushu(n):
+    if n == 1:
+        return False
+    if n == 2:
+        return True
+    issu = True
+    for i in range(2, n):
+        if n%i == 0:
+            issu = False
+    if issu == True:
+        return True
+    else:
+        return False
+
+while True:
+    a = int(input("输入一个偶数："))
+    if a % 2 == 1:
+        print("输入有误，请重新输入！")
+        continue
+    else:
+        break
+
+su = []
+for i in range(1, 1000):
+    if issushu(i):
+        su.append(i)
+
+for i in range(0, len(su)):
+    for j in range(0, len(su)):
+        if su[i] + su[j] == a:
+            print("%d + %d = %d" % (su[i], su[j], a))
+```
+
 > 18 向文本文件中写入内容，然后再读出。
+
+```python
+filename = 'test.txt'
+with open(filename, 'w', encoding='UTF-8') as f:
+    f.write("莫听穿林打叶声，\n")
+    f.write("何妨吟啸且徐行。\n")
+    f.write("竹杖芒鞋轻胜马，\n")
+    f.write("谁怕？\n")
+    f.write("一蓑烟雨任平生。")
+    f.close()
+with open(filename, 'r', encoding='UTF-8') as f:
+    re = f.read()
+    print(re)
+    f.close()
+```
 
 > 19 编写程序，保存为demo6.py，运行后生成文件demo6_new.py，其中的内
 容与demo6.py一致，但是在每行的行尾加上了行号。

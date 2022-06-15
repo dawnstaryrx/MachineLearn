@@ -1,4 +1,4 @@
-cd ./python期末
+cd ./
 
 :push
 
