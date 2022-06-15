@@ -9,7 +9,7 @@ def score():
     jus = 'yes'
     num = 0
     while jus == 'yes':
-        sco.append(int(input("输入成绩：")))
+        sco.append(float(input("输入成绩：")))
         num += 1
         jus = input("是否继续输入：(yes/no)")
     print("平均成绩为：%.2f" % (sum(sco) / num))
