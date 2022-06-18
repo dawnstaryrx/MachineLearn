@@ -24,7 +24,7 @@
 
 # 智能算法速查🚩（待更新...）
 
-<p style="background-color: darkred">仅供个人期末复习使用。</p>
+<p style="color: darkred">仅供个人期末复习使用。</p>
 
 教材:[智能优化算法及其MATLAB实例（第2版）](智能算法/pdf/b01.pdf)
 
